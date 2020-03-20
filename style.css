@@ -1,0 +1,14 @@
+table {
+    border: 3px solid black;
+
+}
+
+td{
+    border-left: 3px solid black;
+}
+
+
+thead, th {
+    background-color: rgb(196, 196, 196);
+    border-left: 3px solid black;
+}
