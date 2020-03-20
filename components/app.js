@@ -12,15 +12,15 @@ class App {
     getGrades(){
         $.ajax({
             method: "GET",
-            url: "https://sgt.lfzprototypes.com/api/grades",
-            header: {
+            headers: {
                 "X-Access-Token": "C6nLlY8h"
             },
-            success: this.getGradesSuccess(),
-            error: this.getGradesError()
+            url: "https://sgt.lfzprototypes.com/api/grades",
+            success: this.handelGetGradesSuccess,
+            error: this.handleGetGradesError
         })
     }
     start(){
-        this.getGrades;
+        this.getGrades();
     }
 }
