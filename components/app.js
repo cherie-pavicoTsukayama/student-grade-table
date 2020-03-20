@@ -1,15 +1,14 @@
 class App {
     constructor(gradeTable){
-        var getGradesError = this.handleGetGradesError.bind(this);
-        var gGetGradesSuccess = this.handelGetGradesSuccess.bind(this);
-        this.gradeTable = gradeTable;
+        this.getGradesError = this.handleGetGradesError.bind(this);
+        this.getGradesSuccess = this.handelGetGradesSuccess.bind(this);
+        this.table = gradeTable;
     }
     handleGetGradesError(error) {
         console.error(error);
     }
     handelGetGradesSuccess(grades) {
-        this.gradeTable.updateGrades(grades);
-        console.log(grades);
+        this.table.updateGrades(grades);
     }
     getGrades(){
         $.ajax({
@@ -18,8 +17,8 @@ class App {
                 "X-Access-Token": "C6nLlY8h"
             },
             url: "https://sgt.lfzprototypes.com/api/grades",
-            success: this.handelGetGradesSuccess,
-            error: this.handleGetGradesError
+            success: this.getGradesSuccess,
+            error: this.getGradesError
         })
 
     }
