@@ -1,5 +1,8 @@
 class App {
     handleGetGradesError(error){
-        console.error("There is an Error", error);
+        console.error(error);
+    }
+    handelGetGradesSuccess(grades) {
+        console.log(grades);
     }
 }
