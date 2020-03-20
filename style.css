@@ -26,3 +26,8 @@ header{
     align-content: flex-end;
     align-items: center;
 }
+
+.push-right {
+    display: flex;
+    justify-content: flex-end;
+}
