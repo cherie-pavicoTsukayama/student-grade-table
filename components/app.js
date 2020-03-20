@@ -8,6 +8,7 @@ class App {
         console.error(error);
     }
     handelGetGradesSuccess(grades) {
+        this.gradeTable.updateGrades(grades);
         console.log(grades);
     }
     getGrades(){
@@ -20,6 +21,7 @@ class App {
             success: this.handelGetGradesSuccess,
             error: this.handleGetGradesError
         })
+
     }
     start(){
         this.getGrades();
