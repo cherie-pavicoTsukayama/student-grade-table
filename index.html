@@ -6,6 +6,7 @@
     <title>Document</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
 <body>
     <header class="container">
@@ -16,8 +17,8 @@
                <h2>Average Grade <span class="badge badge-secondary"></span></h2>
         </div>
     </header>
-    <main>
-        <section class="container">
+    <main class="container">
+        <section class="container col">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -31,11 +32,40 @@
                 </tbody>
             </table>
         </section>
+        <section class="containter col-4">
+            <form action="">
+                <div class="input-group flex-nowrap form-input-height">
+                    <div class="input-group-prepend col-2 padding-left-right-0">
+                        <span class="input-group-text input-group-mod"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input class="col-10" type="text" id="name" name="name" value="Name">
+                </div>
+                <div class="input-group flex-nowrap form-input-height">
+                    <div class="input-group-prepend col-2 padding-left-right-0">
+                        <span class="input-group-text input-group-mod"><i class="fas fa-book"></i></span>
+                    </div>
+                <input class="col-10" type="text" id="course" name="course" value="Course">
+                </div>
+                <div class="input-group flex-nowrap form-input-height">
+                    <div class="input-group-prepend col-2 padding-left-right-0">
+                        <span class="input-group-text input-group-mod"><i class="fas fa-graduation-cap"></i></span>
+                    </div>
+                <input class="col-10" type="text" id="grade" name="grade" value="Grade">
+                </div>
+                <div class="button-container">
+                    <div class="buttons col-5">
+                        <button type="submit" class="btn-primary">Add</button>
+                        <button type="reset" class="btn-primary">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="components/app.js"></script>
     <script src="components/grade-table.js"></script>
     <script src="components/page-header.js"></script>
+    <script src="components/grade-form.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
