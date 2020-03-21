@@ -1,19 +1,19 @@
 class App {
     constructor(gradeTable, pageHeader, gradeForm){
-        this.getGradesError = this.handleGetGradesError.bind(this);
-        this.getGradesSuccess = this.handelGetGradesSuccess.bind(this);
-        this.table = gradeTable;
+        this.handleGetGradesError = this.handleGetGradesError.bind(this);
+        this.handelGetGradesSuccess = this.handelGetGradesSuccess.bind(this);
+        this.gradeTable = gradeTable;
         this.pageHeader = pageHeader;
         this.gradeForm = gradeForm;
         this.createGrade = this.createGrade.bind(this);
-        this.createGradeError = this.handleCreateGradeError.bind(this);
-        this.createGradeSuccess = this.handleCreateGradeSuccess.bind(this);
+        this.handleCreateGradeError = this.handleCreateGradeError.bind(this);
+        this.handleCreateGradeSuccess = this.handleCreateGradeSuccess.bind(this);
     }
     handleGetGradesError(error) {
         console.error(error);
     }
     handelGetGradesSuccess(grades) {
-        this.table.updateGrades(grades);
+        this.gradeTable.updateGrades(grades);
         var sumOfGrades = 0
         var average;
         for(var i = 0; i < grades.length; i++){
@@ -30,8 +30,8 @@ class App {
                 "X-Access-Token": "C6nLlY8h"
             },
             url: "https://sgt.lfzprototypes.com/api/grades",
-            success: this.getGradesSuccess,
-            error: this.getGradesError
+            success: this.handelGetGradesSuccess,
+            error: this.handleGetGradesError,
         })
 
     }
@@ -40,20 +40,20 @@ class App {
         this.gradeForm.onSubmit(this.createGrade);
     }
     createGrade(name, course, grade){
-        console.log("name:", name, "course:", course, "grade:", grade);
+        console.log("createGrade Method:" + "name:", name, "course:", course, "grade:", grade);
         $.ajax({
             method: "POST",
-            url: "https://sgt.lfzprototypes.com/api/grades",
             data: {
                 "name": name,
                 "course": course,
-                "grade": grade
+                "grade": grade,
             },
             headers: {
                 "X-Access-Token": "C6nLlY8h"
             },
-            success: this.createGradeSuccess,
-            error: this.createGradeError
+            url: "https://sgt.lfzprototypes.com/api/grades",
+            success: this.handleCreateGradeSuccess,
+            error: this.handleCreateGradeError,
 
         })
     }
@@ -61,6 +61,6 @@ class App {
         console.log('Error:', error);
     }
     handleCreateGradeSuccess(){
-        this.getGrades;
+        this.getGrades();
     }
 }

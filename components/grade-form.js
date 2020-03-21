@@ -8,8 +8,8 @@ class GradeForm {
         this.createGrade = createGrade;
     }
     handleSubmit(event){
-        console.log("hi");
         event.preventDefault();
+        console.log("hi");
         var formData = new FormData(event.target);
         var name = formData.get('name');
         var course = formData.get('course');
