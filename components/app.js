@@ -10,6 +10,13 @@ class App {
     }
     handelGetGradesSuccess(grades) {
         this.table.updateGrades(grades);
+        var sumOfGrades = 0
+        for(var i = 0; i < grades.length; i++){
+            sumOfGrades += grades[i].grade;
+        }
+        var average = sumOfGrades/grades.length;
+
+        console.log(average);
     }
     getGrades(){
         $.ajax({
