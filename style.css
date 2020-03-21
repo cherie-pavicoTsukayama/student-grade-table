@@ -12,3 +12,22 @@ thead, th {
     background-color: rgb(196, 196, 196);
     border-left: 3px solid black;
 }
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.grade-average-container{
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-end;
+    align-items: center;
+}
+
+.push-right {
+    display: flex;
+    justify-content: flex-end;
+}
