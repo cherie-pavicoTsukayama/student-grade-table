@@ -19,4 +19,7 @@ class GradeTable {
             tbody.appendChild(row);
         }
     }
+    onDeleteclick(deleteGrade){
+        this.deleteGrade = deleteGrade;
+    }
 }
