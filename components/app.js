@@ -40,7 +40,6 @@ class App {
         this.gradeForm.onSubmit(this.createGrade);
     }
     createGrade(name, course, grade){
-        console.log("createGrade Method:" + "name:", name, "course:", course, "grade:", grade);
         $.ajax({
             method: "POST",
             data: {
