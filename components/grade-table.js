@@ -10,9 +10,11 @@ class GradeTable {
             var row = this.renderGradeRow(grades[i], this.deleteGrade);
             tbody.appendChild(row);
         }
-        if(!grades){
-            var noGrades = document.querySelector('p');
+        var noGrades = document.querySelector('p');
+        if(grades.length === 0){
             noGrades.classList.remove('d-none');
+        } else {
+            noGrades.classList.add('d-none');
         }
     }
     onDeleteClick(deleteGrade){
