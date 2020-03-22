@@ -68,6 +68,15 @@ class App {
     }
     deleteGrade(id){
         console.log(id);
+        $.ajax({
+            method: "DELETE",
+            url: "https://sgt.lfzprototypes.com/api/grades/:grade_id",
+            headers: {
+                "X-Access-Token": "C6nLlY8h"
+            }
+            success: this.handleDeleteGradeSuccess,
+            error: this.handleDeleteGradeError
+        })
     }
     handleDeleteGradeError(error){
         console.error('handleDeleteGradeError:', error);
