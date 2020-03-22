@@ -70,10 +70,10 @@ class App {
         console.log(id);
         $.ajax({
             method: "DELETE",
-            url: "https://sgt.lfzprototypes.com/api/grades/:grade_id",
+            url: "https://sgt.lfzprototypes.com/api/grades/" + id,
             headers: {
                 "X-Access-Token": "C6nLlY8h"
-            }
+            },
             success: this.handleDeleteGradeSuccess,
             error: this.handleDeleteGradeError
         })
