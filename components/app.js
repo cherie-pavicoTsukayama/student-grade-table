@@ -13,8 +13,9 @@ class App {
         this.handleDeleteGradeSuccess = this.handleDeleteGradeSuccess.bind(this);
         this.updateGrade = this.updateGrade.bind(this);
         this.handleUpdateGradeError = this.handleUpdateGradeError.bind(this);
-        this.handleuUpdateGradeSuccess = this.handleuUpdateGradeSuccess.bind(this);
-    }
+        this.handleUpdateGradeSuccess = this.handleUpdateGradeSuccess.bind(this);
+      }
+
     handleGetGradesError(error) {
         console.error(error);
     }
@@ -39,7 +40,6 @@ class App {
             success: this.handelGetGradesSuccess,
             error: this.handleGetGradesError,
         })
-
     }
     start(){
         this.getGrades();
@@ -61,7 +61,6 @@ class App {
             url: "https://sgt.lfzprototypes.com/api/grades",
             success: this.handleCreateGradeSuccess,
             error: this.handleCreateGradeError,
-
         })
     }
     handleCreateGradeError(error){
@@ -88,14 +87,27 @@ class App {
     handleDeleteGradeSuccess(){
         this.getGrades();
     }
-    updateGrade(id, data){
+
+    updateGrade(id, studentData){
+        console.log ("id:",  id, "data:", studentData.grade);
         //Submit new data for grade of id to the database
-        // var elements = this.gradeForm.formElement.children;
-        //iterate through elements
+        // $.ajax({
+        //     method: "PATCH",
+        //     url: "https://sgt.lfzprototypes.com/api/grades/" + id,
+        //     data: {
+        //         "grade": studentData.grade
+        //     },
+        //     headers: {
+        //         "X-Access-Token": "C6nLlY8h"
+        //     },
+        //     success: this.handleUpdateGradeSuccess,
+        //     error: this.handleUpdateGradeError
+        // })
     }
     handleUpdateGradeError(error) {
         console.error('handleDeleteGradeError:', error);
     }
-    handleuUpdateGradeSuccess() {
+    handleUpdateGradeSuccess() {
         this.getGrades();
+    }
 }
