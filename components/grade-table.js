@@ -65,8 +65,12 @@ class GradeTable {
         var addButton = document.getElementById('addButton');
         updateButton.classList.remove('hidden');
         addButton.classList.add('hidden');
-        var dataInputsOnForm = document.getElementsByTagName('input');
-
+        var nameInput = document.getElementById('name');
+        var courseInput = document.getElementById('course');
+        var gradeInput = document.getElementById('grade');
+        nameInput.setAttribute('value', data.name);
+        courseInput.setAttribute('value', data.course);
+        gradeInput.setAttribute('value', data.grade);
 
     }
 }
