@@ -28,22 +28,21 @@ class GradeTable {
         course.textContent = data.course;
         var grade = document.createElement('td');
         grade.textContent = data.grade;
-        var deleteButton = document.createElement('button');
+        var operationButton = document.createElement('button');
         var trashIcon = document.createElement('i');
         trashIcon.setAttribute('class', 'fas fa-trash-alt red')
-        // deleteButton.textContent = "Delete"
-        deleteButton.setAttribute('class', "text-align-right delete-button");
-        deleteButton.appendChild(trashIcon);
-        deleteButton.addEventListener('click', function () {
+        operationButton.setAttribute('class', "text-align-right operation-button");
+        operationButton.appendChild(trashIcon);
+        operationButton.addEventListener('click', function () {
             deleteGrade(data.id)
         });
-        var deleteTd = document.createElement('td');
-        deleteTd.setAttribute('class', "text-align-right")
-        deleteTd.appendChild(deleteButton);
+        var operationTd = document.createElement('td');
+        operationTd.setAttribute('class', "text-align-right")
+        operationTd.appendChild(operationButton);
         row.appendChild(name);
         row.appendChild(course);
         row.appendChild(grade);
-        row.appendChild(deleteTd);
+        row.appendChild(operationTd);
 
 
         return row;
