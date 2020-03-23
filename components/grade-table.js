@@ -7,7 +7,7 @@ class GradeTable {
         var tbody = this.tableEl.querySelector('tbody');
         tbody.innerHTML = "";
         for(var i = 0; i < grades.length; i++){
-            var row = this.renderGradeRow(grades[i], this.deleteGrade);
+            var row = this.renderGradeRow(grades[i], this.deleteGrade, this.updateGrade);
             tbody.appendChild(row);
         }
         var noGrades = document.querySelector('p');
@@ -20,7 +20,10 @@ class GradeTable {
     onDeleteClick(deleteGrade){
         this.deleteGrade = deleteGrade;
     }
-    renderGradeRow(data, deleteGrade){
+    onUpdateClick(updateGrade){
+        this.updateGrade = updateGrade;
+    }
+    renderGradeRow(data, deleteGrade, selectedStudentInfo){
         var row = document.createElement('tr');
         var name = document.createElement('td');
         name.textContent = data.name;
@@ -38,9 +41,12 @@ class GradeTable {
         });
         var updateButton = document.createElement('button');
         var updateIcon = document.createElement('i');
-        updateIcon.setAttribute('class', 'fas fa-edit');
+        updateIcon.setAttribute('class', 'fas fa-edit blue');
         updateButton.setAttribute('class', 'operation-button');
         updateButton.appendChild(updateIcon);
+        updateButton.addEventListener('click', function() {
+            this.selectedStudentInfo(data);
+        })
         var operationTd = document.createElement('td');
         operationTd.setAttribute('class', "text-align-right")
         operationTd.appendChild(updateButton);
@@ -49,10 +55,13 @@ class GradeTable {
         row.appendChild(course);
         row.appendChild(grade);
         row.appendChild(operationTd);
-
-
         return row;
+    }
 
-
+    selectedStudentInfo(data){
+        var updateButton = document.getElementById('updateButton');
+        var addButton = document.getElementById('addButton');
+        updateButton.classList.remove('hidden');
+        addButton.classList.add('hidden');
     }
 }

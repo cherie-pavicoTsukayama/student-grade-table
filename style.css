@@ -66,6 +66,9 @@ button:active {
 .red {
     color: red;
 }
+.blue {
+    color: rgb(16, 127, 231);
+}
 .hidden {
     display: none;
 }

@@ -11,6 +11,9 @@ class App {
         this.deleteGrade = this.deleteGrade.bind(this);
         this.handleDeleteGradeError = this.handleDeleteGradeError.bind(this);
         this.handleDeleteGradeSuccess = this.handleDeleteGradeSuccess.bind(this);
+        this.updateGrade = this.updateGrade.bind(this);
+        this.handleUpdateGradeError = this.handleUpdateGradeError.bind(this);
+        this.handleuUpdateGradeSuccess = this.handleuUpdateGradeSuccess.bind(this);
     }
     handleGetGradesError(error) {
         console.error(error);
@@ -42,6 +45,7 @@ class App {
         this.getGrades();
         this.gradeForm.onSubmit(this.createGrade);
         this.gradeTable.onDeleteClick(this.deleteGrade);
+        this.gradeTable.onUpdateClick(this.updateGrade);
     }
     createGrade(name, course, grade){
         $.ajax({
@@ -84,4 +88,14 @@ class App {
     handleDeleteGradeSuccess(){
         this.getGrades();
     }
+    updateGrade(id, data){
+        //Submit new data for grade of id to the database
+        // var elements = this.gradeForm.formElement.children;
+        //iterate through elements
+    }
+    handleUpdateGradeError(error) {
+        console.error('handleDeleteGradeError:', error);
+    }
+    handleuUpdateGradeSuccess() {
+        this.getGrades();
 }
