@@ -35,7 +35,7 @@ form{
 }
 
 .form-input-height{
-    height: 3vw;
+    height: 2rem;
 }
 
 button{
@@ -61,7 +61,7 @@ button{
 button:active {
     transform: scale(.9);
 }
-.operations{
+.text-align-right{
     text-align: right;
 }
 
