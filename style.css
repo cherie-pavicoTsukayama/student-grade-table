@@ -17,11 +17,6 @@ main{
     align-content: flex-end;
     align-items: center;
 }
-
-.push-right {
-    display: flex;
-    justify-content: flex-end;
-}
 .button-container{
     display: flex;
     justify-self: flex-start;
