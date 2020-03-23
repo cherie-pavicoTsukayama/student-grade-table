@@ -60,9 +60,13 @@ class GradeTable {
     }
 
     selectStudentInfo(id, data){
+        console.log('id:', id , 'data:', data);
         var updateButton = document.getElementById('updateButton');
         var addButton = document.getElementById('addButton');
         updateButton.classList.remove('hidden');
         addButton.classList.add('hidden');
+        var dataInputsOnForm = document.getElementsByTagName('input');
+
+
     }
 }
