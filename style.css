@@ -64,3 +64,23 @@ button:active {
 .operations{
     text-align: right;
 }
+
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    .text-align-center {
+        text-align: center;
+    }
+}
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .text-align-center {
+        text-align: center;
+    }
+}
