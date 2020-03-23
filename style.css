@@ -45,7 +45,7 @@ button{
 }
 button.operation-button{
    padding: 1px 1px;
-    margin: 0;
+    margin: 0 15px;
     border-radius: 3px;
     background-color: transparent;
     border: none;

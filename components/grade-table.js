@@ -36,8 +36,14 @@ class GradeTable {
         deleteButton.addEventListener('click', function () {
             deleteGrade(data.id)
         });
+        var updateButton = document.createElement('button');
+        var updateIcon = document.createElement('i');
+        updateIcon.setAttribute('class', 'fas fa-edit');
+        updateButton.setAttribute('class', 'operation-button');
+        updateButton.appendChild(updateIcon);
         var operationTd = document.createElement('td');
         operationTd.setAttribute('class', "text-align-right")
+        operationTd.appendChild(updateButton);
         operationTd.appendChild(deleteButton);
         row.appendChild(name);
         row.appendChild(course);
