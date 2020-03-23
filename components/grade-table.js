@@ -29,8 +29,11 @@ class GradeTable {
         var grade = document.createElement('td');
         grade.textContent = data.grade;
         var deleteButton = document.createElement('button');
-        deleteButton.textContent = "Delete"
-        deleteButton.setAttribute('class', "btn-danger text-align-right delete-button");
+        var trashIcon = document.createElement('i');
+        trashIcon.setAttribute('class', 'fas fa-trash-alt red')
+        // deleteButton.textContent = "Delete"
+        deleteButton.setAttribute('class', "text-align-right delete-button");
+        deleteButton.appendChild(trashIcon);
         deleteButton.addEventListener('click', function () {
             deleteGrade(data.id)
         });

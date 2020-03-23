@@ -43,10 +43,12 @@ button{
     padding: 0 2rem;
     border-radius: 5px;
 }
-.delete-button{
-   padding: 4px 14px;
+button.delete-button{
+   padding: 1px 1px;
     margin: 0;
     border-radius: 3px;
+    background-color: transparent;
+    border: none;
 }
 .input-group-mod {
     background-color: white;
@@ -59,6 +61,10 @@ button:active {
 }
 .text-align-right{
     text-align: right;
+}
+
+.red {
+    color: red;
 }
 
 
