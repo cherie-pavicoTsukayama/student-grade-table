@@ -9,23 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
 <body>
-    <header class="container">
-        <div class="col-6">
+    <header class="container d-flex flex-wrap">
+        <div class="d-flex justify-content-xl-start  justify-content-sm-center justify-content-center col-xl-6 text-align-center">
             <h1>Student Grade Table</h1>
         </div>
-        <div class="push-right col-4">
+        <div class="d-flex justify-content-xl-end  justify-content-sm-center justify-content-center col-xl-6 text-align-center">
                <h2>Average Grade <span class="badge badge-secondary"></span></h2>
         </div>
     </header>
-    <main class="container">
-        <section class="container col">
+    <main class="container d-flex flex-wrap justify-content-sm-center">
+        <section class="container container-90-width col-xl-8">
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>Student Name</th>
                         <th>Course</th>
                         <th>Grade</th>
-                        <th class="operations">Operations</th>
+                        <th class="text-align-right">Operations</th>
                     </tr>
                 </thead>
                 <tbody class="table ">
@@ -34,28 +34,28 @@
             </table>
             <p class="d-none">No Grades Recorded</p>
         </section>
-        <section class="containter col-4">
-            <form action="">
-                <div class="input-group flex-nowrap form-input-height">
-                    <div class="input-group-prepend col-2 padding-left-right-0">
+        <section class="container col-xl-4 p-0 container-90-width">
+            <form  class="col-xl-12 col-sm-12" action="">
+                <div class="input-group flex-nowrap form-input-height ">
+                    <div class="input-group-prepend col-2 pr-0 pl-0 d-flex justify-content-center">
                         <span class="input-group-text input-group-mod"><i class="fas fa-user"></i></span>
                     </div>
-                    <input class="col-10" type="text" id="name" name="name" value="Name">
+                    <input class="col-10" type="text" id="name" name="name" placeholder="Name">
                 </div>
                 <div class="input-group flex-nowrap form-input-height">
-                    <div class="input-group-prepend col-2 padding-left-right-0">
+                    <div class="input-group-prepend col-2 pr-0 pl-0 d-flex justify-content-center">
                         <span class="input-group-text input-group-mod"><i class="fas fa-book"></i></span>
                     </div>
-                <input class="col-10" type="text" id="course" name="course" value="Course">
+                <input class="col-10" type="text" id="course" name="course" placeholder="Course">
                 </div>
                 <div class="input-group flex-nowrap form-input-height">
-                    <div class="input-group-prepend col-2 padding-left-right-0">
+                    <div class="input-group-prepend col-2 pr-0 pl-0 d-flex justify-content-center ">
                         <span class="input-group-text input-group-mod"><i class="fas fa-graduation-cap"></i></span>
                     </div>
-                <input class="col-10" type="text" id="grade" name="grade" value="Grade">
+                <input class="col-10" type="text" id="grade" name="grade" placeholder="Grade">
                 </div>
-                <div class="button-container">
-                    <div class="buttons col-5">
+                <div class="button-container col-12">
+                    <div class="buttons">
                         <button type="submit" class="btn-primary">Add</button>
                         <button type="reset" class="btn-primary">Cancel</button>
                     </div>

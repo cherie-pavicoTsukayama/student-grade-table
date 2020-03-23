@@ -30,12 +30,12 @@ class GradeTable {
         grade.textContent = data.grade;
         var deleteButton = document.createElement('button');
         deleteButton.textContent = "Delete"
-        deleteButton.setAttribute('class', "btn-danger operations delete-button");
+        deleteButton.setAttribute('class', "btn-danger text-align-right delete-button");
         deleteButton.addEventListener('click', function () {
             deleteGrade(data.id)
         });
         var deleteTd = document.createElement('td');
-        deleteTd.setAttribute('class', "operations")
+        deleteTd.setAttribute('class', "text-align-right")
         deleteTd.appendChild(deleteButton);
         row.appendChild(name);
         row.appendChild(course);
