@@ -54,10 +54,6 @@ button{
     font-size: 2rem;
 }
 
-.padding-left-right-0 {
-    padding-right: 0;
-    padding-left: 0;
-}
 button:active {
     transform: scale(.9);
 }
