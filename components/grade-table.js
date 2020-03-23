@@ -28,17 +28,17 @@ class GradeTable {
         course.textContent = data.course;
         var grade = document.createElement('td');
         grade.textContent = data.grade;
-        var operationButton = document.createElement('button');
+        var deleteButton = document.createElement('button');
         var trashIcon = document.createElement('i');
         trashIcon.setAttribute('class', 'fas fa-trash-alt red')
-        operationButton.setAttribute('class', "text-align-right operation-button");
-        operationButton.appendChild(trashIcon);
-        operationButton.addEventListener('click', function () {
+        deleteButton.setAttribute('class', "text-align-right operation-button");
+        deleteButton.appendChild(trashIcon);
+        deleteButton.addEventListener('click', function () {
             deleteGrade(data.id)
         });
         var operationTd = document.createElement('td');
         operationTd.setAttribute('class', "text-align-right")
-        operationTd.appendChild(operationButton);
+        operationTd.appendChild(deleteButton);
         row.appendChild(name);
         row.appendChild(course);
         row.appendChild(grade);
