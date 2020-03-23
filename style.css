@@ -19,7 +19,7 @@ main{
 }
 .button-container{
     display: flex;
-    justify-self: flex-start;
+    justify-content: center;
 }
 .buttons {
     display: flex;
@@ -99,4 +99,16 @@ button:active {
     h2{
         font-size: 1.5rem
     }
+    .container-90-width{
+        width: 90%;
+
+    }
+    input{
+        border: 1px solid grey;
+    }
+    .button-container {
+        justify-self: none;
+        justify-content: center;
+    }
+
 }
