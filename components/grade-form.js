@@ -17,12 +17,14 @@ class GradeForm {
     }
     if (addButton.classList[1] === 'hidden') {
         this.handleUpdate();
+        this.handleReset
     }
     }
 
     onSubmit(createGrade){
         this.createGrade = createGrade;
     }
+
     handleSubmit(){
         var formData = new FormData(event.target);
         var name = formData.get('name');
@@ -32,7 +34,7 @@ class GradeForm {
         event.target.reset();
     }
     handleUpdate(){
-        console.log('Update Pushed')
+        console.log('Update button Pushed')
         var updateButton = document.getElementById('updateButton');
         var addButton = document.getElementById('addButton');
         updateButton.classList.add('hidden');
@@ -44,12 +46,11 @@ class GradeForm {
         console.log("updated Name:", name);
         console.log("updated Course:", course);
         console.log("updated Grade:", grade);
-        this.updateStudentData(id, name, course, grade)
-        // event.target.reset();
+        event.target.reset();
     }
 
     handleReset(){
-        console.log('Reset button was pushed');
+        console.log('Form was reset');
         var nameInput = document.getElementById('name');
         var courseInput = document.getElementById('course');
         var gradeInput = document.getElementById('grade');

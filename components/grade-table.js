@@ -24,7 +24,7 @@ class GradeTable {
         this.updateStudentData = updateStudentData;
 
     }
-    renderGradeRow(data, deleteGrade, selectedStudentInfo, updateStudentData){
+    renderGradeRow(data, deleteGrade, selectedStudentInfo, updateStudentData ){
         var row = document.createElement('tr');
         var name = document.createElement('td');
         name.textContent = data.name;
@@ -47,8 +47,6 @@ class GradeTable {
         updateButton.appendChild(updateIcon);
         updateButton.addEventListener('click', function() {
             selectedStudentInfo(data.id, data);
-            updateStudentData(data.id, data);
-            // selectedStudentInfo(data.id, data);
         })
         var operationTd = document.createElement('td');
         operationTd.setAttribute('class', "text-align-right")
@@ -61,8 +59,9 @@ class GradeTable {
         return row;
     }
 
-    selectStudentInfo(id, data){
+    selectStudentInfo(id, data, updateStudentData){
         console.log('selectStudentInfo id:', id , 'data:', data);
+        ;
         var updateButton = document.getElementById('updateButton');
         var addButton = document.getElementById('addButton');
         updateButton.classList.remove('hidden');
@@ -73,6 +72,5 @@ class GradeTable {
         nameInput.setAttribute('value', data.name);
         courseInput.setAttribute('value', data.course);
         gradeInput.setAttribute('value', data.grade);
-        return id;
     }
 }
