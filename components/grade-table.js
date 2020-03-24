@@ -7,7 +7,7 @@ class GradeTable {
         var tbody = this.tableEl.querySelector('tbody');
         tbody.innerHTML = "";
         for(var i = 0; i < grades.length; i++){
-            var row = this.renderGradeRow(grades[i], this.deleteGrade, this.selectStudentInfo, this.updateStudentData);
+            var row = this.renderGradeRow(grades[i], this.deleteGrade, this.selectStudentInfo);
             tbody.appendChild(row);
         }
         var noGrades = document.querySelector('p');
@@ -24,7 +24,7 @@ class GradeTable {
         this.updateStudentData = updateStudentData;
 
     }
-    renderGradeRow(data, deleteGrade, selectedStudentInfo, updateStudentData ){
+    renderGradeRow(data, deleteGrade, selectedStudentInfo){
         var row = document.createElement('tr');
         var name = document.createElement('td');
         name.textContent = data.name;
@@ -59,9 +59,8 @@ class GradeTable {
         return row;
     }
 
-    selectStudentInfo(id, data, updateStudentData){
+    selectStudentInfo(id, data){
         console.log('selectStudentInfo id:', id , 'data:', data);
-        ;
         var updateButton = document.getElementById('updateButton');
         var addButton = document.getElementById('addButton');
         updateButton.classList.remove('hidden');

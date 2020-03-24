@@ -24,7 +24,7 @@ class GradeForm {
     onSubmit(createGrade){
         this.createGrade = createGrade;
     }
-
+    
     handleSubmit(){
         var formData = new FormData(event.target);
         var name = formData.get('name');

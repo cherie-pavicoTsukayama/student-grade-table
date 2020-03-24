@@ -89,7 +89,9 @@ class App {
     }
 
     updateStudentData(id, data){
-        console.log ("updateStudentData",  id, data.name, data.course, data.grade);
+        var selectedStudentId = id;
+        var selectedStudentData = data;
+        console.log ("updateStudentData", selectedStudentId, selectedStudentData );
         //Submit new data for grade of id to the database
         // $.ajax({
         //     method: "PATCH",
