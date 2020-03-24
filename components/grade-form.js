@@ -2,21 +2,26 @@ class GradeForm {
     constructor (formElement) {
         this.formElement = formElement;
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.formElement.addEventListener('submit', function(){
-            var updateButton = document.getElementById('updateButton');
-            var addButton = document.getElementById('addButton');
-            if (updateButton.textContent === "Update"){
-                this.handleUpdate();
-            } else {
-            this.handleSubmit();
-            }
-        })
+        this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.formElement.addEventListener('submit',  this.handleClick)
     }
+    handleClick(event){
+    event.preventDefault();
+    var updateButton = document.getElementById('updateButton');
+    var addButton = document.getElementById('addButton');
+    if (updateButton.classList[1] === 'hidden') {
+        this.handleSubmit();
+    }
+    if (addButton.classList[1] === 'hidden') {
+        this.handleUpdate();
+    }
+    }
+
     onSubmit(createGrade){
         this.createGrade = createGrade;
     }
-    handleSubmit(event){
-        event.preventDefault();
+    handleSubmit(){
         var formData = new FormData(event.target);
         var name = formData.get('name');
         var course = formData.get('course');
@@ -25,11 +30,12 @@ class GradeForm {
         event.target.reset();
     }
 
-    handleUpdate(event){
+    handleUpdate(){
+        console.log('Update Pushed')
         var updateButton = document.getElementById('updateButton');
         var addButton = document.getElementById('addButton');
         updateButton.classList.add('hidden');
         addButton.classList.remove('hidden');
-        event.target.reset();
+        // event.target.reset();
     }
 }
