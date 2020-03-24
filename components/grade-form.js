@@ -46,8 +46,12 @@ class GradeForm {
         var nameInput = document.getElementById('name');
         var courseInput = document.getElementById('course');
         var gradeInput = document.getElementById('grade');
+        var updateButton = document.getElementById('updateButton');
+        var addButton = document.getElementById('addButton');
         nameInput.removeAttribute('value');
         courseInput.removeAttribute('value');
         gradeInput.removeAttribute('value');
+        updateButton.classList.add('hidden');
+        addButton.classList.remove('hidden');
     }
 }
