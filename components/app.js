@@ -11,9 +11,9 @@ class App {
         this.deleteGrade = this.deleteGrade.bind(this);
         this.handleDeleteGradeError = this.handleDeleteGradeError.bind(this);
         this.handleDeleteGradeSuccess = this.handleDeleteGradeSuccess.bind(this);
-        this.updateGrade = this.updateGrade.bind(this);
-        this.handleUpdateGradeError = this.handleUpdateGradeError.bind(this);
-        this.handleUpdateGradeSuccess = this.handleUpdateGradeSuccess.bind(this);
+        this.updateStudentData = this.updateStudentData.bind(this);
+        this.handleUpdateStudentDataError = this.handleUpdateStudentDataError.bind(this);
+        this.handleUpdateStudentDataSuccess = this.handleUpdateStudentDataSuccess.bind(this);
       }
 
     handleGetGradesError(error) {
@@ -45,7 +45,7 @@ class App {
         this.getGrades();
         this.gradeForm.onSubmit(this.createGrade);
         this.gradeTable.onDeleteClick(this.deleteGrade);
-        this.gradeTable.onUpdateClick(this.updateGrade);
+        this.gradeTable.onUpdateClick(this.updateStudentData);
     }
     createGrade(name, course, grade){
         $.ajax({
@@ -88,26 +88,28 @@ class App {
         this.getGrades();
     }
 
-    updateGrade(id, studentData){
-        console.log ("id:",  id, "data:", studentData.grade);
+    updateStudentData(id, data){
+        console.log ("updateStudentData",  id, data.name, data.course, data.grade);
         //Submit new data for grade of id to the database
         // $.ajax({
         //     method: "PATCH",
         //     url: "https://sgt.lfzprototypes.com/api/grades/" + id,
         //     data: {
-        //         "grade": studentData.grade
+        //         "name": name,
+        //         "course": course,
+        //         "grade": grade,
         //     },
         //     headers: {
         //         "X-Access-Token": "C6nLlY8h"
         //     },
-        //     success: this.handleUpdateGradeSuccess,
-        //     error: this.handleUpdateGradeError
+        //     success: this.handleUpdateStudentDataSuccess,
+        //     error: this.handleUpdateStudentDataError
         // })
     }
-    handleUpdateGradeError(error) {
+    handleUpdateStudentDataError(error) {
         console.error('handleDeleteGradeError:', error);
     }
-    handleUpdateGradeSuccess() {
+    handleUpdateStudentDataSuccess() {
         this.getGrades();
     }
 }
