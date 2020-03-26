@@ -7,6 +7,7 @@ class GradeForm {
         this.handleReset = this.handleReset.bind(this);
         this.formElement.addEventListener('reset', this.handleReset);
         this.formElement.addEventListener('submit',  this.handleClick);
+        this.currentStudentUpdating = null;
     }
     handleClick(event){
     event.preventDefault();
@@ -24,7 +25,7 @@ class GradeForm {
     onSubmit(createGrade){
         this.createGrade = createGrade;
     }
-    
+
     handleSubmit(){
         var formData = new FormData(event.target);
         var name = formData.get('name');
@@ -34,9 +35,10 @@ class GradeForm {
         event.target.reset();
     }
     handleUpdate(){
-        console.log('Update button Pushed')
         var updateButton = document.getElementById('updateButton');
         var addButton = document.getElementById('addButton');
+        var id = document.getElementById('gradeForm')
+        id = id.getAttribute('data-current-student')
         updateButton.classList.add('hidden');
         addButton.classList.remove('hidden');
         var formData = new FormData(event.target);
@@ -46,11 +48,11 @@ class GradeForm {
         console.log("updated Name:", name);
         console.log("updated Course:", course);
         console.log("updated Grade:", grade);
+        this.createGrade(name, course, grade, id);
         event.target.reset();
     }
 
     handleReset(){
-        console.log('Form was reset');
         var nameInput = document.getElementById('name');
         var courseInput = document.getElementById('course');
         var gradeInput = document.getElementById('grade');

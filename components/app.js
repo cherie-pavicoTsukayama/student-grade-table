@@ -47,21 +47,26 @@ class App {
         this.gradeTable.onDeleteClick(this.deleteGrade);
         this.gradeTable.onUpdateClick(this.updateStudentData);
     }
-    createGrade(name, course, grade){
-        $.ajax({
-            method: "POST",
-            data: {
-                "name": name,
-                "course": course,
-                "grade": grade,
-            },
-            headers: {
-                "X-Access-Token": "C6nLlY8h"
-            },
-            url: "https://sgt.lfzprototypes.com/api/grades",
-            success: this.handleCreateGradeSuccess,
-            error: this.handleCreateGradeError,
-        })
+    createGrade(name, course, grade, id){
+        if(!id) {
+            $.ajax({
+                method: "POST",
+                data: {
+                    "name": name,
+                    "course": course,
+                    "grade": grade,
+                },
+                headers: {
+                    "X-Access-Token": "C6nLlY8h"
+                },
+                url: "https://sgt.lfzprototypes.com/api/grades",
+                success: this.handleCreateGradeSuccess,
+                error: this.handleCreateGradeError,
+            })
+        } else {
+            this.updateStudentData(name, course, grade, id);
+        }
+
     }
     handleCreateGradeError(error){
         console.log('Error:', error);
@@ -70,7 +75,6 @@ class App {
         this.getGrades();
     }
     deleteGrade(id){
-        console.log(id);
         $.ajax({
             method: "DELETE",
             url: "https://sgt.lfzprototypes.com/api/grades/" + id,
@@ -88,25 +92,26 @@ class App {
         this.getGrades();
     }
 
-    updateStudentData(id, data){
+    updateStudentData(name, course, grade, id){
         var selectedStudentId = id;
-        var selectedStudentData = data;
-        console.log ("updateStudentData", selectedStudentId, selectedStudentData );
-        //Submit new data for grade of id to the database
-        // $.ajax({
-        //     method: "PATCH",
-        //     url: "https://sgt.lfzprototypes.com/api/grades/" + id,
-        //     data: {
-        //         "name": name,
-        //         "course": course,
-        //         "grade": grade,
-        //     },
-        //     headers: {
-        //         "X-Access-Token": "C6nLlY8h"
-        //     },
-        //     success: this.handleUpdateStudentDataSuccess,
-        //     error: this.handleUpdateStudentDataError
-        // })
+        var selectedStudentName = name;
+        var selectedStudentCourse = course;
+        var selectedStudentGrade = grade;
+        // Submit new data for grade of id to the database
+        $.ajax({
+            method: "PATCH",
+            url: "https://sgt.lfzprototypes.com/api/grades/" + id,
+            data: {
+                "name": name,
+                "course": course,
+                "grade": grade,
+            },
+            headers: {
+                "X-Access-Token": "C6nLlY8h"
+            },
+            success: this.handleUpdateStudentDataSuccess,
+            error: this.handleUpdateStudentDataError
+        })
     }
     handleUpdateStudentDataError(error) {
         console.error('handleDeleteGradeError:', error);

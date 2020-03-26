@@ -25,6 +25,7 @@ class GradeTable {
 
     }
     renderGradeRow(data, deleteGrade, selectedStudentInfo){
+
         var row = document.createElement('tr');
         var name = document.createElement('td');
         name.textContent = data.name;
@@ -60,8 +61,8 @@ class GradeTable {
     }
 
     selectStudentInfo(id, data){
-        console.log('selectStudentInfo id:', id , 'data:', data);
         var updateButton = document.getElementById('updateButton');
+        var gradeForm = document.getElementById('gradeForm');
         var addButton = document.getElementById('addButton');
         updateButton.classList.remove('hidden');
         addButton.classList.add('hidden');
@@ -71,5 +72,6 @@ class GradeTable {
         nameInput.setAttribute('value', data.name);
         courseInput.setAttribute('value', data.course);
         gradeInput.setAttribute('value', data.grade);
+        gradeForm.setAttribute('data-current-student', id);
     }
 }
