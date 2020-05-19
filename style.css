@@ -43,10 +43,12 @@ button{
     padding: 0 2rem;
     border-radius: 5px;
 }
-.delete-button{
-   padding: 4px 14px;
-    margin: 0;
+button.operation-button{
+   padding: 1px 1px;
+    margin: 0 15px;
     border-radius: 3px;
+    background-color: transparent;
+    border: none;
 }
 .input-group-mod {
     background-color: white;
@@ -61,6 +63,15 @@ button:active {
     text-align: right;
 }
 
+.red {
+    color: red;
+}
+.blue {
+    color: rgb(16, 127, 231);
+}
+.hidden {
+    display: none;
+}
 
 @media only screen
   and (min-device-width: 375px)
